@@ -1,0 +1,70 @@
+Data Fields:
+Color darkcolor(dark color)
+Color lightcolor(light color)
+int numRows(number of squares horizontally)
+int numCols(number of squares vertically)
+double boardWidth(board dimensions: width)
+double boardHeight(board dimensions: height)
+AnchorPane anchorpane(returns the checkerboard)
+double rectangleHeight(the height of rectangle)
+double rectangleWidth(the width of rectangle)
+double pieceradius(the radius of chessboard piece)
+String playerA(name of player A)
+String playerB(name of player B)
+String[numRows][numCols] (Used to get the positions of pieces on the board)
+Circle circle()
+int darplayer[numRows][numCols](position of white pieces)
+int whiteplayer[numRows][numCols](position of black pieces)
+
+Method:
+1.Constructors(construct the checkerboard class and initialize the darkcolor,lightcolor, 
+2.boardheigh, boardwidth, number of rows, number of heights, boardwidth, and boardheight as well)
+3.AnchorPane build(): build the anchorPane,add the square with the property into the anchorpane, return the anchorPane.
+4.Boolean isValid(int currentrow, currentcol, Color colors):(check if the move is valid, for
+5.playerA choose the white pieces, the valid move for white pieces should be array[currentrow+1][currentcol+1] or [currentrow-1][currentcol+1], for darkplayers. the 6.valid move should be array[currentrow+1][currentcol-1] or array[currentrow-1][currentcol-1] 
+7.if it's valid then returns true;
+
+8.Void move()(if isvalid() equals to true, then move the pieces, otherwise no. Besides, it will also check if the piece jumps to another position, the status of the piece, it will check whether non-king's move is valid)
+
+9.Boolean iswin(int whitecirclearray, int blackcirclearray) if either white piece or black pieces are obliterated from the board completely, then one players wins, if the length of array contains either white pieces or black pieces becomes zero, then it means that there no more white/black pieces on the board. Gameover)
+
+10.Circles build()
+building the circles as the pieces in the checkerboard, it will first add the radius and colors(light color/dark color)
+
+11.Boolean isKing(darplayer, whiteplayer)
+Check if the position and surrounded make this piece as either the blackking or white king
+
+12.Boolean validmoveforking()
+enumerate all valid moves made by kings
+
+
+
+13.int randomstart()
+randomly generate the number to decide which player plays first
+
+14.void min-max search(darplayer, whiteplayer)
+doing min-max search, list out all possible states in the tree, doing the depth first search to find the bottom leaves, assigning values (possitive and negative) to them, and then the node from second deepest level will choose either the minimum or maximum values from their leaves, iterate this process, then the AI will find the best move
+
+
+
+
+
+white pieces position: whiteplayer[0][0], whiteplayer[0][1],whiteplayer[0][2], whiteplayer[0][3], whiteplayer[0][4], whiteplayer[0][5],whiteplayer[0][6],whiteplayer[0][7]
+whiteplayer[1][0], whiteplayer[1][1],whiteplayer[1][2], whiteplayer[1][3], whiteplayer[1][4], whiteplayer[1][5],whiteplayer[1][6],whiteplayer[1][7]
+
+black pieces position: blackplayer[6][0], blackplayer[6][1],blackplayer[6][2],blackplayer[6][3],blackplayer[6][4],blackplayer[6][5],blackplayer[6][6],blackplayer[6][7],
+blackplayer[7][0], blackplayer[7][1],blackplayer[7][2],blackplayer[7][3],blackplayer[7][4],blackplayer[7][5],blackplayer[7][6],blackplayer[7][7],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
